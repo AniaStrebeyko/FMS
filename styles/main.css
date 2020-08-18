@@ -8,6 +8,7 @@
 /* variables */
 :root {
     --navbar-height: 50px;
+    --deep-red: #B10002;
 }
 
 html {
@@ -24,10 +25,20 @@ nav {
     justify-content: center;
 }
 
+h2 {
+    color: var(--deep-red);
+}
+
 nav a {
     text-decoration: none;
     color: #000;
     padding: 10px;
+    line-height: 0px;
+}
+
+nav a:nth-of-type(1),
+nav a:nth-of-type(2) {
+    border-right: 3px solid var(--deep-red);
 }
 
 main {
@@ -36,10 +47,11 @@ main {
     flex-direction: column;
     align-items: center;
     line-height: 1.5rem;
+    padding: 10vw;
 }
 
 .main-img {
-    max-width: 700px;
+    max-width: 210px;
 }
 
 /* RWD */
@@ -53,6 +65,24 @@ section#cele ul {
     text-align: left;
 }
 
+
+
 ul li {
     margin: 10px 0;
 }
+
+ul {
+    list-style: none; /* Remove default bullets */
+    padding: 0 67px;
+    max-width: 450px;
+  }
+  
+  ul li::before {
+    content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+    color: var(--deep-red); /* Change the color */
+    font-weight: bolder; /* If you want it to be bold */
+    font-size: 32px;
+    display: inline-block; /* Needed to add space between the bullet and the text */
+    width: 1em; /* Also needed for space (tweak if needed) */
+    margin-left: -1em; /* Also needed for space (tweak if needed) */
+  }
