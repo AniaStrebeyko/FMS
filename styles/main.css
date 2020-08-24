@@ -90,12 +90,16 @@ ul {
     margin-left: -1em; /* Also needed for space (tweak if needed) */
   }
 
-  /* Caruzela */
 #carousel {
   overflow-x: hidden;
   margin-bottom: 30px;
 }
 
+#carousel .logo {
+  position: relative;
+	width: 100%;
+	top: -84px;
+}
 .carousel__viewport {
   display: flex;
   flex-direction: row;
@@ -103,3 +107,4 @@ ul {
   width: 800px;
   transition: 2s;
 }
+
