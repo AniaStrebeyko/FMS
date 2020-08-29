@@ -69,7 +69,7 @@ main .container {
 #carousel {
   overflow-x: hidden;
   margin-bottom: 30px;
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
 }
@@ -195,6 +195,10 @@ ul li::before {
 	
 	.half-if-wide {
 		width: 50%;
+  }
+
+  #carousel {
+    display: flex;
   }
 
 }
