@@ -10,13 +10,20 @@
 </head>
 
 <body>
+	<!-- nawigacja -->
 	<nav>
 		<a href="#kontakt">kontakt</a>
 		<a href="#konto">konto</a>
 		<a href="#cele">cele działania fundacji</a>
 	</nav>
+
+	<!-- treść strony-->
 	<main>
+
+		<!-- główny kontener - on ogranicza nam szerokość strony -->
 		<div class="container">
+
+			<!-- karuzela -->
 			<section id="carousel" aria-label="Gallery">
 				<div class="carousel__viewport">
 					<img src="static/01.png" alt="">
@@ -29,48 +36,47 @@
 				</div>
 				<img src="static/logo-wide.png" alt="FMS Cantare Deo" class="logo">
 			</section>
-			<section class="left">
-				<img src="static/Cecylia.png" alt="Święta Cecylia" class="main-img">
-				<section id="kontakt">
-					<h2>Kontakt</h2>
-					Fundacja Muzyki Sakralnej Cantare Deo;<br>
-					Al. Waszyngtona 126/18; 04-076 Warszawa<br>
-					Tel. 22 52 28 417<br>
-					e-mail: afilaber@mkw.pl
-				</section>
 
-				<section id="konto">
-					<h2>Nr konta bankowego</h2>
-					82 2490 0005 0000 4530 3062 7617<br>
-					KRS: 0000786745
-				</section>
-			</section>
+			<!-- ten div wyświetla zawartość w kolumnie na wąskich ekranach i w rzędzie na szerokich -->
+			<div class="horizontal-if-wide">
 
-		<section id="cele" class="right">
+				<div class="half-if-wide">
+					<img src="static/Cecylia.png" alt="Święta Cecylia" id="icon">
+	
+					<section id="kontakt">
+						<h2>Kontakt</h2>
+						Fundacja Muzyki Sakralnej Cantare Deo;<br>
+						Al. Waszyngtona 126/18; 04-076 Warszawa<br>
+						Tel. 22 52 28 417<br>
+						e-mail: afilaber@mkw.pl
+					</section>
+	
+					<section id="konto">
+						<h2>Nr konta bankowego</h2>
+						82 2490 0005 0000 4530 3062 7617<br>
+						KRS: 0000786745
+					</section>
+				</div>
+
+		<section id="cele" class="half-if-wide">
 			<h2>CELAMI DZIAŁANIA FUNDACJI<br/> są między innymi:</h2>
 			<ul>
-				<li>
-					upowszechnianie i popularyzowanie muzyki sakralnej poprzez organizowanie i współorganizowanie w
-					zakresie kultury chrześcijańskiej: koncertów, przeglądów, festiwali,
+				<li>upowszechnianie i popularyzowanie muzyki sakralnej poprzez organizowanie i współorganizowanie w	zakresie kultury chrześcijańskiej: koncertów, przeglądów, festiwali
 				</li>
-				<li>
-					wspieranie i podnoszenie poziomu edukacji artystycznej, prowadzenie szkoleń, kursów, konferencji
-					i seminariów,
+				<li>wspieranie i podnoszenie poziomu edukacji artystycznej, prowadzenie szkoleń, kursów, konferencji i seminariów
 				</li>
-				<li>
-					wspieranie wydarzeń artystycznych oraz wykonawców muzyki religijnej,
+				<li>wspieranie wydarzeń artystycznych oraz wykonawców muzyki religijnej
 				</li>
-				<li>
-					promowanie i wspieranie młodzieży uzdolnionej artystycznie,
+				<li>promowanie i wspieranie młodzieży uzdolnionej artystycznie
 				</li>
-				<li>
-					udzielanie stypendiów dla młodych, uzdolnionych muzyków kościelnych,
+				<li>udzielanie stypendiów dla młodych, uzdolnionych muzyków kościelnych
 				</li>
-				<li>
-					przyznawanie nagród zasłużonym muzykom kościelnym.
+				<li>przyznawanie nagród zasłużonym muzykom kościelnym.
 				</li>
 			</ul>
 		</section>
+	</div>
+
 	</div>
 
 	</main>

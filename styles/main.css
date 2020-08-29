@@ -1,8 +1,8 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
 }
 
 /* variables */
@@ -12,106 +12,68 @@
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
+
+/* górny pasek nawigacji */
 nav {
-    width: 100%;
-    height: var(--navbar-height);
-    background-color: #fff;
-    position: fixed;
-    top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
+  width: 100%;
+  height: var(--navbar-height);
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
 }
 
-h2 {
-    color: var(--deep-red);
-    font-size: 1.3em;
-}
-
+/* 1) linki */
 nav a {
-    text-decoration: none;
-    color: #000;
-    padding: 10px;
-    line-height: 0px;
+  text-decoration: none;
+  color: #000;
+  padding: 10px;
+  line-height: 0px;
 }
 
+/* 2) przedziałki między linkami */
 nav a:nth-of-type(1),
 nav a:nth-of-type(2) {
     border-right: 3px solid var(--deep-red);
 }
 
+/* główna część strony */
 main {
- display: flex;
- justify-content: center;
- width: 100%;
- position: relative;
+  margin-top: var(--navbar-height);
+  display: flex;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  justify-content: center;
+  overflow-x: hidden;
 }
 
+/* kontener ograniczający szerokość */
 main .container {
-    margin-top: var(--navbar-height);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    line-height: 1.5rem;
-    padding: 0 0;
-    width: 100%;
+  max-width: 1000px;
+  padding: 0 0;
 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  line-height: 1.5rem;
 }
 
-.main-img {
-    max-width: 210px;
-}
-
-/* RWD */
-main section {
-    max-width: 750px;
-    padding: var(--navbar-height) 0 0;
-    text-align: center;
-}
-
-section#cele ul {
-    text-align: left;
-}
-
-
-
-ul li {
-    margin: 10px 0;
-}
-
-ul {
-    list-style: none; /* Remove default bullets */
-    /* padding: 0 67px; */
-    max-width: 450px;
-    padding: 0 0 0 67px;
-  }
-  
-  ul li::before {
-    content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
-    color: var(--deep-red); /* Change the color */
-    font-weight: bolder; /* If you want it to be bold */
-    font-size: 32px;
-    display: inline-block; /* Needed to add space between the bullet and the text */
-    width: 1em; /* Also needed for space (tweak if needed) */
-    margin-left: -1em; /* Also needed for space (tweak if needed) */
-  }
-
+/* elementy karuzeli */
 #carousel {
   overflow-x: hidden;
-	margin-bottom: 30px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.logo {
-    position: absolute;
-    width: 900px;
-    top: 437px;
-}
 .carousel__viewport {
   display: flex;
   flex-direction: row;
@@ -120,16 +82,119 @@ ul {
   transition: 2s;
 }
 
+.logo {
+  position: absolute;
+  width: 900px;
+  top: 347px;
+}
+
+/* dwie poniższe klasy istnieją tylko po to,
+by zmienić im właściwości na szerszych ekranach */
+.horizontal-if-wide {
+    display: flex;
+    flex-direction: column;
+}
+
+.half-if-wide {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ogólnie o sekcjach */
+section {
+  width: 100%;
+  padding: var(--navbar-height) 0 0;
+  text-align: center;
+}
+
+/* tytuły sekcji */
+section h2 {
+  color: var(--deep-red);
+  font-size: 1.3em;
+  margin-bottom: 20px;
+}
+
+/* ikona świętej */
+#icon {
+  max-width: 210px;
+  margin-top: 75px;
+}
+
+/* cele są:
+1) dorównane do lewej;
+2) mają zniknięte domyślne kropki (wstawimy czerwone niżej)
+3) zrównane z tytułem paddingiem i ograniczoną maksymalną szerokością */
+section#cele ul {
+  text-align: left;
+  list-style: none; /* Remove default bullets */
+  padding: 0 0 0 85px;
+  max-width: 450px;
+}
+
+/* przerwy między celami */
+ul li {
+  margin: 20px 0;
+}
+
+/* nie chcemy podwójnego marginesu przy pierwszym punkcie (jako że mamy też
+dolny margines of tytułu sekcji) */
+ul li:first-of-type {
+  margin: 0;
+}
+
+
+/* nasze czerwone kropeczki wypunktowania */
+ul li::before {
+  content: "\2022";  /* kod na kropkę */
+  color: var(--deep-red); /* nasz kolor */
+  font-weight: bolder; /* niech będzie większa */
+  font-size: 44px; /* jej rozmiar */
+  display: inline-block; /* przerwa między nią a tekstem */
+  width: 1em; /* też potrzebny dla przerwy*/
+  margin-left: -1em; /* Also needed for space (tweak if needed) */
+
+  line-height: 16px;
+  vertical-align: top;
+}
+
+/* body
+    nav
+
+    main
+        div.container
+        section#carousel
+        div.horizontal-if-wide
+            div.half-if-wide
+                img
+                section#kontakt
+                section#konto
+            section.half-if-wide#cele
+ */
+
+  
+
+
+
+
+
+
+
 /* RWD */
 
 @media only screen and (min-width: 900px) {
-	main .conainer {
-		flex-direction: row;
-	}
+	main .horizontal-if-wide {
+    flex-direction: row;
+    padding: 50px 0;
+  }
+  
+  #icon {
+    margin-top: 0;
+  }
 	
-	main section.right,
-	main section.left {
+	.half-if-wide {
 		width: 50%;
-	}
+  }
 
 }
