@@ -98,7 +98,7 @@ main .container {
   min-height: 100px;
 
   justify-content: center;
-  margin: 50px 0;
+  margin: 50px 0 15px;
 }
 
 .responsive-brackets-and-logo img.bracket {
