@@ -32,8 +32,7 @@ nav {
 nav a {
   text-decoration: none;
   color: #000;
-  padding: 10px;
-  line-height: 0px;
+  padding: 0 10px;
 }
 
 /* 2) przedziałki między linkami */
@@ -56,7 +55,7 @@ main {
 /* kontener ograniczający szerokość */
 main .container {
   max-width: 1000px;
-  padding: 0 0;
+  padding: 0 20px;
 
   display: flex;
   flex-direction: column;
@@ -76,20 +75,31 @@ main .container {
 
 .carousel__viewport {
   display: flex;
-  flex-direction: row;
-  height: 414px;
+  height: 214px;
   width: 800px;
+  overflow-x: hidden;
+}
+
+/* To jest ruchoma tacka z obrazkami */
+.carousel__tray {
+  height: 100%;
+  display: flex;
   transition: 2s;
 }
 
+/* To są nasze obrazki */
+.carousel__tray > div {
+  height: 100%;
+  width: 800px;
+}
+
 .logo {
-  position: absolute;
+  margin-top: -50px;
   width: 900px;
-  top: 347px;
+  z-index: 1;
 }
 
 /* tzw. "wąsy" i logo chcemy pokazać na mniejszych szerokościach */
-
 .responsive-brackets-and-logo {
   position: relative;
   width: 100%;
@@ -103,15 +113,11 @@ main .container {
 
 .responsive-brackets-and-logo img.bracket {
   max-width: 100%;
-  position: absolute;
-  top: 80px;
+  margin-top: 80px;
 }
 .responsive-brackets-and-logo img.logo {
   width: 150px;
   position: absolute;
-  top: -60px;
-  /* width: 80%; */
-  /* position: absolute; */
 }
 
 /* dwie poniższe klasy istnieją tylko po to,
